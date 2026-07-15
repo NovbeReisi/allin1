@@ -232,11 +232,17 @@ input[type="password"]:focus { outline: none; border-color: var(--cyan); }
   .option { font-size: 13.5px; padding: 11px 12px; }
 
   #navrow { gap: 8px; }
-  .navbtn { padding: 10px 14px; font-size: 13px; flex: 1; }
+  .navbtn { padding: 10px 10px; font-size: 12.5px; flex: 1 1 100px; }
 
   #hint { font-size: 10.5px; }
 
   .card { padding: 26px 20px; }
+
+  #donescreen { padding: 26px 14px; }
+  #donescreen h2 { font-size: 19px; }
+  #donescreen .scoreBig { font-size: 34px; margin: 10px 0; }
+  #donescreen .pct { font-size: 13px; margin-bottom: 18px; }
+  .doneBtns .navbtn { flex: 1 1 140px; }
 }
 
 @media (max-width: 420px) {
