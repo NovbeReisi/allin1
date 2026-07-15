@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASA Module 11A — Study Tools</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="center-wrap">
+  <div class="card">
+    <div class="eyebrow">EASA Part-66 · B1.1</div>
+    <h1>Module 11A Study Tools</h1>
+    <p class="sub">Enter the password to continue.</p>
+    <div class="errmsg" id="errmsg"></div>
+    <input type="password" id="pw" placeholder="Password" autofocus>
+    <button class="btn" id="enterBtn">Enter</button>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script>
+  if (isAuthed()) {
+    window.location.href = "hub.html";
+  }
+
+  const pwInput = document.getElementById("pw");
+  const errmsg = document.getElementById("errmsg");
+  const enterBtn = document.getElementById("enterBtn");
+
+  async function tryLogin() {
+    const value = pwInput.value;
+    if (!value) return;
+    const hash = await sha256Hex(value);
+    if (hash === AUTH_HASH) {
+      sessionStorage.setItem(AUTH_KEY, "1");
+      window.location.href = "hub.html";
+    } else {
+      errmsg.textContent = "Incorrect password.";
+      pwInput.value = "";
+      pwInput.focus();
+    }
+  }
+
+  enterBtn.addEventListener("click", tryLogin);
+  pwInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") tryLogin();
+  });
+</script>
+</body>
+</html>

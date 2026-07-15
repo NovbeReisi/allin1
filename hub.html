@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASA Module 11A — Study Tools</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="center-wrap">
+  <div class="card" style="max-width: 520px;">
+    <div class="eyebrow">EASA Part-66 · B1.1</div>
+    <h1>Module 11A Study Tools</h1>
+    <p class="sub">474 questions · Turbine Aeroplane Aerodynamics, Structures &amp; Systems</p>
+
+    <div class="hub-options">
+      <a class="hub-card" href="parts.html">
+        <div class="title">Study Test — 4 Parts</div>
+        <div class="desc">All 474 questions split into 4 parts, instant right/wrong feedback per question, jump to any question anytime.</div>
+        <div class="badge">120 · 120 · 120 · 114</div>
+      </a>
+      <a class="hub-card" href="exam.html">
+        <div class="title">Random Exam Simulation</div>
+        <div class="desc">140 random questions drawn fresh each attempt, answer positions shuffled, no instant feedback — graded at the end with full review.</div>
+        <div class="badge">140 questions · new set every attempt</div>
+      </a>
+    </div>
+
+    <a class="backlink" id="logoutLink" href="#">Log out</a>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script>
+  requireAuth();
+  document.getElementById("logoutLink").addEventListener("click", (e) => {
+    e.preventDefault();
+    sessionStorage.removeItem(AUTH_KEY);
+    window.location.href = "index.html";
+  });
+</script>
+</body>
+</html>

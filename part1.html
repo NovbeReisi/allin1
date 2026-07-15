@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASA Module 11A — Part 1 (Q1-120)</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<div id="sidebar">
+  <a class="backlink" href="parts.html">&larr; All parts</a>
+  <h2>Part 1 &middot; Q1&ndash;120</h2>
+  <div class="grid" id="navgrid"></div>
+</div>
+<div id="main">
+  <div id="topbar">
+    <h1>EASA Module 11A — Part 1</h1>
+    <div id="score">Score: <b id="scoreval">0</b> / <span id="answeredval">0</span> answered</div>
+  </div>
+  <div id="progress-wrap"><div id="progress-bar"></div></div>
+
+  <div id="quizview">
+    <div id="qcard">
+      <div id="qnum"></div>
+      <div id="qflag"></div>
+      <div id="qtext"></div>
+      <div id="options"></div>
+      <div id="feedback"></div>
+    </div>
+    <div id="navrow">
+      <button class="navbtn" id="prevBtn">&larr; Back</button>
+      <button class="navbtn primary" id="finishBtn">Finish &amp; see score</button>
+      <button class="navbtn" id="nextBtn">Next &rarr;</button>
+    </div>
+    <div id="hint">Use &larr; &rarr; to navigate &middot; 1 / 2 / 3 to select an answer</div>
+  </div>
+
+  <div id="donescreen">
+    <h2>Part 1 complete</h2>
+    <div class="scoreBig" id="scoreBig">0 / 120</div>
+    <div class="pct" id="pctText"></div>
+    <div class="doneBtns">
+      <button class="navbtn primary" id="btnBackToQuiz">Back to questions</button>
+      <a class="navbtn" href="parts.html">All parts</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="js/auth.js"></script>
+<script>requireAuth();</script>
+<script src="data/part1.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
